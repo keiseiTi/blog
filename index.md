@@ -3,23 +3,5 @@
 layout: home
 
 hero:
-  name: "keiseiTi"
-  text: "keiseiTi"
-  tagline: My great project tagline
-  actions:
-    - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
-
-features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
----
-
+  name: "keiseiTi 的知识库"
+  tagline: 记录工作中遇到的问题，以及对一些技术的思考
