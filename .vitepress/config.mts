@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress';
-
+import { genNav, genSidebar } from './theme/utils';
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'keiseiTi',
@@ -13,29 +13,9 @@ export default defineConfig({
   },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: '首页', link: '/' },
-      {
-        text: '文章',
-        link: '/posts/解决 monaco editor 在 umi 下 icon 不显示的问题.md',
-        activeMatch:
-          '/posts/解决 monaco editor 在 umi 下 icon 不显示的问题.md/',
-      },
-      // { text: '分类', link: '/category' },
-      // { text: '标签', link: '/tags' },
-    ],
+    nav: genNav(),
 
-    sidebar: [
-      {
-        text: '文章',
-        items: [
-          {
-            text: '解决 monaco editor 在 umi 下 icon 不显示的问题.md',
-            link: '/posts/解决 monaco editor 在 umi 下 icon 不显示的问题.md',
-          },
-        ],
-      },
-    ],
+    sidebar: genSidebar(),
 
     search: {
       provider: 'local',
