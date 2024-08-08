@@ -38,8 +38,8 @@
 
 ![3.png](../assets//umi-monaco-editor/3.png)
 
-## 总结
+## 后续
 
-最后大概翻了下 `umi` 的源码，`umi` 内部维护了 `webpack` 的源码。至于为什么 `umi` 解析 `monaco editor` 的 `ttf` 字体会导致浏览器解析失败呢，具体原因也不深入排查了。
+之后做了个简单的 `demo` ，也就是 `umi` + `monaco editor` 的项目，`icon` 能正常显示。所以是低代码项目本身构建的问题，至于什么问题就暂时先不深究了。
 
 ![4.png](../assets//umi-monaco-editor/4.png)
