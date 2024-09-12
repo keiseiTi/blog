@@ -1,6 +1,6 @@
 ---
 title: umi 中使用 monaco editor，icon 不显示的问题
-date: 2024/9/12 20:05:01
+date: 2024/8/7 20:47:24
 ---
 
 # umi 中使用 monaco editor，icon 不显示的问题
