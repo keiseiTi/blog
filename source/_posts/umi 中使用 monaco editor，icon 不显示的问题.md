@@ -19,7 +19,7 @@ date: 2024/8/7 20:47:24
 
 低代码平台项目在部署后，线上能够使用到 `monco editor` 进行代码逻辑编写，但发现 `monaco editor` 的 `icon` 不展示了，又开始新的一轮问题排查。
 
-![5.png](../assets/umi-monaco-editor/5.png)
+![5.png](/assets/umi-monaco-editor/5.png)
 
 ## 解决思路
 
@@ -33,18 +33,18 @@ date: 2024/8/7 20:47:24
 
 在控制台中出现了这样的警告。沿着这个警告的信息去网上搜，看到说是“**多半是字体库的信息不全或者已损坏**”。于是把 `node_modules` 里的 `monaco editor` 的字体存到本地项目里，继续尝试，也未成效。
 
-![1.png](../assets/umi-monaco-editor/1.png)
+![1.png](/assets/umi-monaco-editor/1.png)
 
 继续排查后面的警告内容，这次终于确定了问题所在。
 
-![2.png](../assets/umi-monaco-editor/2.png)
+![2.png](/assets/umi-monaco-editor/2.png)
 
 `icon` 无法显示的问题是，经过 `umi` 处理后的 `ttf` 字体，浏览器无法解析。并通过处理后的 `ttf` 字体大小和原 `ttf` 字体大小做比较，资源大小不一致也能佐证笔者这个想法。于是将原有的 `ttf` 字体转化为 `woff` 字体后，再经过本地 `css` 文件引入 `woff` 字体资源后，`icon` 终于显示了。
 
-![3.png](../assets/umi-monaco-editor/3.png)
+![3.png](/assets/umi-monaco-editor/3.png)
 
 ## 后续
 
 之后做了个简单的 `demo` ，也就是 `umi` + `monaco editor` 的项目，`icon` 能正常显示。所以是低代码项目本身构建的问题，至于什么问题就暂时先不深究了。
 
-![4.png](../assets/umi-monaco-editor/4.png)
+![4.png](/assets/umi-monaco-editor/4.png)

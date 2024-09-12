@@ -27,7 +27,7 @@ date: 2024/9/10 23:59:54
 
 通过 `addExtraLib` 可以添加 `ts` 类型声明，包括自定义的类型声明。当要注意的是，需要使用 `typescript` `language`。
 
-![1.png](../assets/use-monaco-editor/1.png)
+![1.png](/assets/use-monaco-editor/1.png)
 
 ### registerCompletionItemProvider——代码补全
 
@@ -39,13 +39,13 @@ date: 2024/9/10 23:59:54
 
 思路是通过 `AST` 分析代码，得到相对应的 `tokens`，再计算出相对应需要提示的 `token` 的 `position` 即可。
 
-![2.png](../assets/use-monaco-editor/2.png)
+![2.png](/assets/use-monaco-editor/2.png)
 
 ### registerEditorOpener——快捷跳转
 
 低代码平台的代码编辑器会支持导入第三方的代码片段，所以需要在编辑器上进行相对应的跳转提示。网上查了一些资料后，最终选择使用 `registerEditorOpener` 。再搭配 `addOverlayWidget`，可以在控件里展示第三方代码。
 
-![3.png](../assets/use-monaco-editor/3.png)
+![3.png](/use-monaco-editor/3.png)
 
 
 ## 总结
