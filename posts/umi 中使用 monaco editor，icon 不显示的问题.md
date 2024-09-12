@@ -1,4 +1,4 @@
-# 在 umi 中使用 monaco editor 后 icon 不显示的问题
+# umi 中使用 monaco editor，icon 不显示的问题
 
 ## 背景
 
