@@ -42,15 +42,23 @@
         return false
     }
 
+    document.body.addEventListener('keydown', e => {
+      if((e.ctrlKey || e.metaKey) && e.key == 'j') {
+        openOrHideSearchContent();
+      }
+    })
+
     function openOrHideSearchContent() {
       let isHidden = searchOverlayArea.classList.contains('hidden')
       if (isHidden) {
         searchOverlayArea.classList.remove('hidden')
         document.body.classList.add('hidden')
-        // inputArea.focus()
+        inputArea.focus();
+        inputArea.onclick()
       } else {
         searchOverlayArea.classList.add('hidden')
         document.body.classList.remove('hidden')
+        // inputArea.value = ''
       }
     }
 
