@@ -119,7 +119,7 @@ feed:
   template:
 
 search:
-  path: search.xml
+  path: /blog/search.xml
   field: post
   content: true
 
