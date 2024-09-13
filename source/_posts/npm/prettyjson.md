@@ -2,8 +2,8 @@
 layout: about
 title: 每周npm模块源码解读：@medv/prettyjson
 date: 2018-11-14 14:04:00
-tags: Npm
-category: npm
+tags: NPM
+category: NPM
 ---
 
 **周2018.11.12 ~ 2018.11.18**

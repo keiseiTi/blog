@@ -2,8 +2,8 @@
 layout: about
 title: 每周npm模块源码解读：pify
 date: 2018-10-23 13:54:37
-tags: Npm
-category: npm
+tags: NPM
+category: NPM
 ---
 
 **周2018.10.22 ~ 2018.10.28**
