@@ -209,6 +209,7 @@ footer:
 # 文章搜索
 search:
   enable: true
+  path: search.xml
   placeholder: 
 
 # 深/浅配色切换
@@ -281,3 +282,9 @@ cdns:
 
 # 主题色
 themeColor: '#808080'
+
+# 字数统计
+symbols_count_time:
+  separated_meta: true
+  item_text_post: true
+  item_text_total: false

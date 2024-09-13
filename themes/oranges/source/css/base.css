@@ -440,8 +440,8 @@ a:hover {
   flex-wrap: wrap;
 }
 
-.post-attach .post-pubtime, .post-attach .post-tags, .post-attach .post-categories {
-  padding: 0 10px;
+.post-attach .post-pubtime, .post-attach .post-tags, .post-attach, .post-categories, .post-words {
+  padding: 0 8px;
   display: flex;
   align-items: center;
 }

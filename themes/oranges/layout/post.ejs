@@ -66,7 +66,7 @@
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime mr-10" title="<%= __('updateTime') %>"></i>
-          <%- page.updated.format("YYYY-MM-DD HH:mm:ss") %>
+          <%- page.updated.format("YYYY-MM-DD") %>
         </span>
         <% for(item of theme.navbar) {
           if (item.key === 'tags' && item.enable) {
@@ -98,6 +98,16 @@
           <% }
           }
         } %>
+        <span class="post-words">
+          <i class="iconfont icon-fa-clock-o mr-8"></i>
+          <span>
+            字数统计：<%- symbolsCount(page.content) %> 字  
+          </span>
+        </span>
+        <span class="post-words">
+          <i class="iconfont icon-fa-file-word-o mr-8"></i>
+          <span>阅读时长 ≈ <%- symbolsTime(page.content) %>分钟</span>
+        </span>
       </div>
       <div class="markdown-body">
         <%- page.content %>
