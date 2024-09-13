@@ -57,18 +57,18 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 
   <!-- hexo site css -->
-  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/blog/css/main.css" />
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
   <!-- 代码块风格 -->
   <% if (theme.codeBlock && theme.codeBlock.style && theme.codeBlock.style == 'mac-black'){ %>
-    <%- css(['/css/figcaption/mac-block.css'])%>
+    <%- css(['/blog/css/figcaption/mac-block.css'])%>
   <% } %>
 
   <!-- jquery3.3.1 -->
   <% if (theme.cdns && theme.cdns.jquery && theme.cdns.jquery.enable) { %>
     <script defer type="text/javascript" src="<%- theme.cdns.jquery.url %>"></script>
   <% } else { %>
-    <script defer type="text/javascript" src="/plugins/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/blog/plugins/jquery.min.js"></script>
   <% } %>
 
   <!-- fancybox -->
@@ -76,10 +76,10 @@
     <link href="<%- theme.cdns.fancybox.url.css %>" rel="stylesheet">
     <script defer type="text/javascript" src="<%- theme.cdns.fancybox.url.js %>"></script>
   <% } else { %>
-    <link href="/plugins/jquery.fancybox.min.css" rel="stylesheet">
-    <script defer type="text/javascript" src="/plugins/jquery.fancybox.min.js"></script>
+    <link href="/blog/plugins/jquery.fancybox.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="/blog/plugins/jquery.fancybox.min.js"></script>
   <% } %>
-  <%- js(['/js/fancybox.js']) %>
+  <%- js(['/blog/js/fancybox.js']) %>
 
   <% if(theme.gtag.enable) { %>
     <!-- Global site tag (gtag.js) - Google Analytics -->

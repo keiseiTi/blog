@@ -21,12 +21,12 @@
 # 网站图标
 favicon:
   enable: true
-  icon: /images/favicon.png
-  touch_icon: /images/favicon.png
+  icon: /blog/images/favicon.png
+  touch_icon: /blog/images/favicon.png
 
 # 用户头像与昵称
 avatar:
-  author_photo: /images/avatar.png
+  author_photo: /blog/images/avatar.png
   author_nickname: keiseiTi
   path: /
 
@@ -87,17 +87,17 @@ navbar:
   -
     name: 归档
     enable: true
-    path: /archives
+    path: /blog/archives
     key: archives
   -
     name: 分类
     enable: false
-    path: /categories
+    path: /blog/categories
     key: categories
   -
     name: 标签
     enable: true
-    path: /tags
+    path: /blog/tags
     key: tags
   # -
   #   name: Friends
@@ -107,7 +107,7 @@ navbar:
   -
     name: 关于
     enable: true
-    path: /about
+    path: /blog/about
     key: about
 
 # 文章目录

@@ -45,7 +45,7 @@ date: 2024/9/10 23:59:54
 
 低代码平台的代码编辑器会支持导入第三方的代码片段，所以需要在编辑器上进行相对应的跳转提示。网上查了一些资料后，最终选择使用 `registerEditorOpener` 。再搭配 `addOverlayWidget`，可以在控件里展示第三方代码。
 
-![3.png](/use-monaco-editor/3.png)
+![3.png](/assets/use-monaco-editor/3.png)
 
 
 ## 总结
