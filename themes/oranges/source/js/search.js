@@ -132,6 +132,6 @@ var searchFunc = function (path, search_id, content_id) {
 }
 
 var getSearchFile = function(){
-    var path = "/search.xml";
+    var path = "/blog/search.xml";
     searchFunc(path, 'search-input', 'search-result');
 }

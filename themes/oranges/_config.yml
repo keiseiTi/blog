@@ -209,7 +209,7 @@ footer:
 # 文章搜索
 search:
   enable: true
-  path: /blog/search.xml
+  path: search.xml
   placeholder: 
 
 # 深/浅配色切换
