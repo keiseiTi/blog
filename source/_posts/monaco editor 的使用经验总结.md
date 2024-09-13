@@ -1,6 +1,7 @@
 ---
 title: monaco editor 的使用经验总结 
 date: 2024/9/10 23:59:54
+tag: monaco editor
 ---
 
 <!-- # monaco editor 的使用经验总结  -->
