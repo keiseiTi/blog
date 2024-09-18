@@ -158,10 +158,10 @@ footer:
     #   name: twitter
     #   icon: twitter
     #   path:
-    # -
-    #   name: wechat
-    #   icon: wechat
-    #   path:
+    -
+      name: wechat
+      icon: wechat
+      path: /blog/assets/wechat.jpg
     # -
     #   name: weibo
     #   icon: weibo
