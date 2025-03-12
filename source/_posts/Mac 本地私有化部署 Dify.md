@@ -1,5 +1,5 @@
 ---
-title: Mac 本地私有化部署 Dify
+title: MacOS 本地私有化部署 Dify
 date: 2025-03-12 22:50:00
 tags: LLM
 ---
