@@ -6,7 +6,7 @@ tags: Dart
 
 在项目开发中，会经常遇到请求多个接口的情况，为了提升请求效率，通常采取并发请求的方式去解决。这个场景很经典。用图表示这个场景。
 
-![flow.png](/assets/dart/flow.png)
+![concurrence-fetch.png](/assets/dart/concurrence-fetch.png)
 
 
 ## Future
@@ -61,37 +61,57 @@ void main() {
 Future<void> fetchQueue(
   List<Future<dynamic>> queueTask,
   int max,
-  Function callback,
+  Function(List<dynamic>) callback,
 ) async {
+  // 预分配结果数组（避免越界）
+  final result = List<dynamic>.filled(queueTask.length, null);
   int runningTask = 0;
-  int queueIndex = 0;
-  List<dynamic> result = [];
-  while (runningTask < max && queueTask.isNotEmpty) {
-    Future<dynamic> task = queueTask.removeAt(0);
-    // 任务池被占用数量+1
-    runningTask++;
-    int taskIndex = queueIndex;
-    queueIndex++;
-    task
-        .then((e) {
-          result[taskIndex] = e;
-        })
-        .catchError((e) {
-          result[taskIndex] = e;
-        })
-        .whenComplete(() {
-          // 任务池被占用数量-1
-          runningTask--;
-          if(queueTask.length == 0) {
-            callback(result);
-          }
-        });
+  int nextIndex = 0; // 下一个要执行的任务索引
+  int completedCount = 0; // 已完成任务数
+
+  void runNext() {
+    // 如果还有任务未执行，且并发数未满
+    while (runningTask < max && nextIndex < queueTask.length) {
+      final task = queueTask[nextIndex];
+      final currentIndex = nextIndex;
+      nextIndex++;
+      runningTask++;
+
+      task
+          .then((value) {
+            result[currentIndex] = value;
+          })
+          .catchError((error) {
+            result[currentIndex] = error;
+          })
+          .whenComplete(() {
+            runningTask--;
+            completedCount++;
+            
+            // 尝试启动下一个任务
+            runNext();
+            
+            // 如果所有任务完成，执行回调
+            if (completedCount == queueTask.length) {
+              callback(result);
+            }
+          });
+    }
+  }
+
+  // 开始执行
+  runNext();
+  
+  // 边界情况：如果 queueTask 为空
+  if (queueTask.isEmpty) {
+    callback([]);
   }
 }
-
 ```
 
-最后了解下 `Completer`，一个能手动控制 `Future` 。
+
+> 除此之外，还有其他方式吗？那来了解下 Completer，一个能手动完成 Future 的控制器。
+
 
 ## **Completer**
 
@@ -146,3 +166,56 @@ void main(){
 `completer.isCompleted` 返回 `bool`，表示是否已完成
 
 `completer.future()` 获取与 `Completer` 关联的 `Future`
+
+
+```dart
+Future<List<dynamic>> fetchQueue(
+  List<Future<dynamic>> tasks,
+  int maxConcurrent,
+) async {
+  if (tasks.isEmpty) return [];
+
+  final results = List<dynamic>.filled(tasks.length, null);
+  final completer = Completer<List<dynamic>>();
+  int running = 0;
+  int nextIndex = 0;
+  int completed = 0;
+
+  void runTask() {
+    if (nextIndex >= tasks.length) return;
+    
+    final index = nextIndex++;
+    final task = tasks[index];
+    running++;
+
+    task
+        .then((value) => results[index] = value)
+        .catchError((error) => results[index] = error)
+        .whenComplete(() {
+      running--;
+      completed++;
+      
+      // 启动下一个任务
+      if (nextIndex < tasks.length) {
+        runTask();
+      }
+      
+      // 所有任务完成
+      if (completed == tasks.length) {
+        completer.complete(results);
+      }
+    });
+  }
+
+  // 启动初始批次
+  for (int i = 0; i < maxConcurrent && nextIndex < tasks.length; i++) {
+    runTask();
+  }
+
+  return completer.future;
+}
+
+// 使用
+final results = await fetchQueue(futureList, 3);
+callback(results);
+```
