@@ -8,7 +8,7 @@ tags: Dart
 
 下图直观地展示了这一过程：
 
-![concurrence-fetch.png](/assets/dart/concurrence-fetch.png)
+![concurrence-fetch.png](/assets/flutter/concurrence-fetch.png)
 
 然而，无限制地并发请求可能带来性能问题（如内存溢出、服务器压力过大等）。因此，限制最大并发数成为一种常见的优化策略。而要实现这一需求，离不开对 Dart 中 `Future` 和 `Completer` 的深入理解。
 
