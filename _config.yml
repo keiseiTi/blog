@@ -132,3 +132,11 @@ symbols_count_time:
   awl: 4
   wpm: 275
   suffix: ""
+
+sitemap:
+  path: 
+    - sitemap.xml
+    - sitemap.txt
+  rel: false
+  tags: true
+  categories: true
