@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "hexo generate && cp robots.txt blog",
+    "build": "hexo generate && cp robots.txt public",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server"
