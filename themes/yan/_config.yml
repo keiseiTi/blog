@@ -28,7 +28,7 @@ favicon:
 avatar:
   author_photo: /blog/images/avatar.png
   author_nickname: keiseiTi
-  path: /
+  path: /blog/about
 
 # Google 分析
 # https://analytics.google.com

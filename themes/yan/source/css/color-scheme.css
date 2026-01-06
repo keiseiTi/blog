@@ -1,6 +1,6 @@
 /* light scheme */
 :root[color-mode="light"] {
-  --bg-body: #f9f9f9;
+  --bg-body: #fdfefb;
   --color-text-base: #555555;
   --color-text-a: #555555;
   --color-text-a-hover: #222222;
@@ -8,8 +8,8 @@
   --color-text-sub: #8e8e8e;
   --color-text-md-title: #333333;
   --color-text-md-content: #444444;
-  --color-text-md-code: #d45d00;
-  --bg-text-md-code: #f0f0f0;
+  --color-text-md-code: #DB615D;
+  --bg-text-md-code: #EDEDEB;
   --bg-block-md-quote: #f0f0f0;
   --color-block-md-quote: #666666;
   --color-divider-md-border: #e0e0e0;
@@ -23,7 +23,8 @@
 
 /* dark scheme */
 :root[color-mode="dark"] {
-  --bg-body: #2d2d2d;
+  --bg-body: #1d1d1d;
+  --bg-image: none;
   --color-text-base: #cccccc;
   --color-text-a: #cccccc;
   --color-text-a-hover: #ffffff;
