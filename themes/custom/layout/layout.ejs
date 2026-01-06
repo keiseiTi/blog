@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="<%= config.language %>" color-mode="light">
+
+  <%- partial('_partial/header') %>
+
+  <body>
+    <div id="app">
+      <%- partial('_partial/navigation') %>
+
+      <div class="main-content">
+        <%- body %>
+      </div>
+
+      <%- partial('_partial/footer') %>
+
+      <div class="tools-bar">
+        <%- partial('_partial/backtotop') %>
+
+        <%- partial('_partial/shares') %>
+      </div>
+    </div>
+  </body>
+</html>
